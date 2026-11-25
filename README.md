@@ -27,7 +27,8 @@ O **HTML e o CSS já vêm prontos** (a landing page da EducaCão igual ao `model
 
 Na pasta **`explicacao/`** está a **versão com explicação** para você entender cada parte:
 
-- **`Explicacao_JavaScript.md`**: a patinha e a agenda explicadas bloco por bloco, com o caminho dos dados entre JavaScript, PHP e banco.
+- **`Explicacao_JavaScript.pdf`**: **guia passo a passo do JavaScript** (para acompanhar em casa ou se não houver apresentação): o que precisa instalar, como usar o F12 (Console e Network), e as duas funções separadas por parte: **🐾 Patinhas** e **📅 Agenda online**, com prints marcados de onde mexer, o código de cada passo e desenhos explicando como funciona na prática.
+- **`Explicacao_JavaScript.md`**: o mesmo conteúdo em texto, com as respostas de cada lacuna e o porquê.
 - **`Explicacao_PHP_Banco_de_Dados.pdf`**: passo a passo com prints, da instalação do PHP até o formulário gravando no banco.
 - **`Explicacao_HTML_CSS.pdf`**: como a página foi montada (o HTML e o CSS já vêm prontos para você).
 
@@ -145,6 +146,8 @@ document.addEventListener('click', function (evento) {    // DEPOIS (escolheu B)
 ```
 
 > 🔍 **F12 → Console** mostra os erros do JavaScript em vermelho (com o arquivo e a linha). Enquanto ainda houver `___`, vai aparecer `___ is not defined`: é normal, é a lacuna que falta.
+
+> 📘 Travou? Abra o **`explicacao/Explicacao_JavaScript.pdf`**: cada passo tem print, código marcado e desenho explicando.
 
 ### 3.1 Aquecimento: patinhas 🐾 (`js/patinhas.js`)
 
