@@ -1,0 +1,154 @@
+/* ================================================================
+   javascript.css — visual das partes de JavaScript (3º ano)
+   JÁ VEM PRONTO: você não precisa mexer neste arquivo.
+   Ele usa as mesmas variáveis do :root do style.css (cores, raio...).
+   ================================================================ */
+
+/* ============ PATINHAS (js/patinhas.js) ============ */
+/* Cada clique cria um <span class="pata">🐾</span> no lugar do mouse. */
+.pata {
+    position: absolute;
+    z-index: 9999;
+    font-size: 1.5rem;
+    pointer-events: none;           /* a pata não atrapalha os cliques */
+    transform: translate(-50%, -50%) rotate(var(--giro, 0deg));
+    animation: pata-some 1s ease-out forwards;
+}
+
+@keyframes pata-some {
+    from {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(var(--giro, 0deg)) scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: translate(-50%, -140%) rotate(var(--giro, 0deg)) scale(0.6);
+    }
+}
+
+/* ============ AGENDA ONLINE (js/agenda.js) ============ */
+.agenda-box {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr 1fr;
+    gap: 28px;
+    padding: 28px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    box-shadow: var(--shadow);
+}
+
+.agenda-passo {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.agenda-titulo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    color: var(--green-dark);
+    font-weight: 700;
+}
+
+.agenda-num {
+    display: inline-grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    color: var(--white);
+    background: var(--orange);
+    border-radius: 50%;
+    font-size: 0.85rem;
+}
+
+.agenda-passo input[type="date"] {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    border: 1px solid #d8ded7;
+    border-radius: 8px;
+    font: inherit;
+    color: var(--text);
+}
+
+.agenda-horarios {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.agenda-vazio {
+    grid-column: 1 / -1;
+    margin: 0;
+    padding: 14px;
+    color: var(--muted);
+    background: var(--cream);
+    border-radius: 10px;
+    font-size: 0.9rem;
+}
+
+/* Botão de cada horário (criado pelo JavaScript) */
+.horario {
+    min-height: 42px;
+    color: var(--green-dark);
+    background: var(--green-soft);
+    border: 2px solid transparent;
+    border-radius: 10px;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 150ms ease, border-color 150ms ease;
+}
+
+.horario:hover:not(:disabled) {
+    border-color: var(--green);
+    transform: translateY(-2px);
+}
+
+.horario.selecionado {
+    color: var(--white);
+    background: var(--orange);
+}
+
+.horario.ocupado {
+    color: #a3aca6;
+    background: #f1f1ee;
+    text-decoration: line-through;
+    cursor: not-allowed;
+}
+
+.agenda-passo .button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.agenda-mensagem {
+    min-height: 1.4em;
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.agenda-mensagem.info { color: var(--green-dark); }
+.agenda-mensagem.sucesso { color: var(--green); }
+.agenda-mensagem.erro { color: #c2410c; }
+
+@media (max-width: 980px) {
+    .agenda-box {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .agenda-box {
+        padding: 20px;
+    }
+
+    .agenda-horarios {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}

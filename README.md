@@ -1,112 +1,222 @@
-# 🐾 Atividade 03 · 3º ano · Landing Page EducaCão (HTML5 e CSS3)
+# 🐾 Atividade 03 · 3º ano · EducaCão: PHP, banco de dados e JavaScript
 
 > 📅 **Prazo de entrega: de 30/11 a 04/12.** Trabalhos entregues depois de 04/12 não serão aceitos.
 
+O **HTML e o CSS já vêm prontos** (a landing page da EducaCão igual ao `modelo.pdf`). O foco do 3º ano é **dar vida ao site**: ligar o formulário ao banco com **PHP** e criar uma **agenda online** com **JavaScript** que conversa com o banco.
+
 ## ⚠️ O que você precisa fazer
 
-| Arquivo | Sua tarefa |
-| --- | --- |
-| `index.html` | **Preencher** todos os `___` com os textos do `modelo.pdf` (inclusive os `alt` das imagens). |
-| `css/style.css` | **Responder** cada propriedade: leia as opções A, B e C e digite o valor certo depois dos `:`. |
-| `css/base.css` | **Não mexer.** |
-
-Os arquivos já estão soltos neste repositório, **não precisa descompactar nada dentro de outra pasta**.
+| Parte | Arquivos | Como completar |
+| --- | --- | --- |
+| **1 · Banco** | `banco/banco.sql`, `config.php` | Complete os `___` (linha **DICA** acima de cada um) e rode no Beekeeper. |
+| **2 · PHP do Contato** | `conexao.php`, `salvar.php` | Complete os `___` com a ajuda das linhas **DICA**. |
+| **3 · JavaScript** | `js/patinhas.js`, `horarios.php`, `agendar.php`, `js/agenda.js` | No PHP: linhas **DICA**. No JavaScript: escolha **A, B ou C** e digite o valor. |
+| Pronto (não mexer) | `index.html`, `css/`, `testar_conexao.php`, `config.exemplo.php` | Só personalize no final (seção 🎨). |
 
 **PASSO 1:** Clique no botão verde **Code** → **Download ZIP**.
 
-**PASSO 2:** Extraia o ZIP baixado (botão direito → **Extrair tudo**) dentro da sua pasta.
+**PASSO 2:** Extraia o ZIP (botão direito → **Extrair tudo**) dentro da sua pasta.
 
-**PASSO 3:** No **VS Code**: **Arquivo → Abrir Pasta** e escolha a pasta extraída (a que tem `index.html`, `css`, `img` e `modelo.pdf`).
+**PASSO 3:** No **VS Code**: **Arquivo → Abrir Pasta** e escolha a pasta extraída (a que tem `index.html`, `css`, `js`, `img`).
 
-**PASSO 4:** Abra o `index.html` com o **Live Server** e comece pelo HTML; depois responda o `style.css` de cima para baixo.
+**PASSO 4:** Siga as **Partes 1, 2 e 3** abaixo, nessa ordem.
 
 ---
-
-
-> **Você é o(a) desenvolvedor(a) contratado(a) pela EducaCão**, uma empresa fictícia de educação canina. O cliente entregou o arquivo **`modelo.pdf`**, que deve ser reproduzido visualmente no projeto final. Sua missão é montar os textos no HTML e reconstruir o visual com as alternativas do CSS.
 
 ## 📘 Versão com explicação (para tirar dúvidas)
 
 Na pasta **`explicacao/`** está a **versão com explicação** para você entender cada parte:
 
-- **`Explicacao_HTML_CSS.pdf`**: a correção da página na ordem do projeto, com o código de cada seção e desenhos explicando cada propriedade do CSS.
+- **`Explicacao_JavaScript.md`**: a patinha e a agenda explicadas bloco por bloco, com o caminho dos dados entre JavaScript, PHP e banco.
+- **`Explicacao_PHP_Banco_de_Dados.pdf`**: passo a passo com prints, da instalação do PHP até o formulário gravando no banco.
+- **`Explicacao_HTML_CSS.pdf`**: como a página foi montada (o HTML e o CSS já vêm prontos para você).
 
-Ela mostra as respostas, mas o objetivo é **entender**: tente primeiro, use o PDF quando travar e confira o porquê de cada valor. A pasta `explicacao/` não precisa ir para o seu repositório de entrega.
+Elas mostram as respostas, mas o objetivo é **entender**: tente primeiro, use quando travar e confira o porquê de cada valor. A pasta `explicacao/` não precisa ir para o seu repositório de entrega.
 
-## 🎯 Objetivo e resultado esperado
-
-A página final deverá apresentar a **mesma organização e a mesma identidade visual do PDF**: marca em verde com destaque laranja, menu horizontal, banner com foto, três cartões de serviços, seção Sobre, faixa verde-clara de diferenciais, três depoimentos fictícios, contato com formulário e rodapé verde-escuro. Primeiro deixe a página **igual ao modelo**; depois você pode **personalizar** (veja a seção 🎨 abaixo), desde que o resultado continue parecido com a landing page do modelo.
-
-Em `css/style.css`, **uma das três opções de cada questão corresponde ao estilo do modelo**. Os valores precisam ser descobertos observando o PDF, testando e comparando. A resposta correta **não está marcada**.
-
-## 📁 Estrutura obrigatória
+## 📁 Estrutura do projeto
 
 ```text
-Atividade-03-Educacao/
-├── index.html                ← complete os ___ do HTML
-├── modelo.pdf                ← referência visual do cliente
-├── README.md                 ← instruções e regras
-├── explicacao/               ← PDF(s) com a explicação (para tirar dúvidas)
+Atividade-03-3-ano/
+├── index.html              ← PRONTO (já tem a seção da agenda e os <script>)
+├── modelo.pdf              ← referência visual
+├── README.md / LEIA-ME.txt ← instruções
+├── explicacao/             ← versão com explicação (para tirar dúvidas)
 ├── css/
-│   ├── base.css              ← base neutra para a visualização (NÃO EDITAR)
-│   └── style.css             ← SEU EXERCÍCIO: preencher alternativas
+│   ├── base.css            ← PRONTO
+│   ├── style.css           ← PRONTO (a página igual ao modelo)
+│   └── javascript.css      ← PRONTO (visual das patinhas e da agenda)
+├── banco/
+│   └── banco.sql           ← complete os ___ (Partes 1 a 4)
+├── config.exemplo.php      ← PRONTO: copie para config.php e coloque a senha
+├── conexao.php             ← complete os ___ (abre a conexão)
+├── salvar.php              ← complete os ___ (formulário de Contato)
+├── testar_conexao.php      ← PRONTO: mostra "Conexão OK!"
+├── horarios.php            ← complete os ___ (devolve os horários ocupados em JSON)
+├── agendar.php             ← complete os ___ (grava o agendamento)
+├── js/
+│   ├── patinhas.js         ← complete os ___ (alternativas A, B, C)
+│   └── agenda.js           ← complete os ___ (alternativas A, B, C)
+├── .gitignore              ← impede o config.php de ir para o GitHub
 └── img/
-    ├── golden.avif
-    ├── adestrador1.avif
-    ├── adestrador2.avif
-    ├── adestrador 3.avif
-    └── sobre.jpg
 ```
 
-**Atenção às imagens:** as quatro fotos `*.avif` neste pacote são recortes da referência entregue pelo professor e servem ao exercício. A foto `sobre.jpg` é apenas um espaço reservado: substitua-a por uma foto apropriada, se disponibilizada pelo professor. Preserve os nomes exatos ou atualize os `src` no HTML. Não use uma pasta `img` vazia.
+---
 
-## 🚀 Como abrir no VS Code e ver tudo acontecendo
+## 🐘 Parte 1 · Preparar o PHP e o banco
 
-1. No GitHub, clique em **Code → Download ZIP**.
-2. Extraia **toda a pasta**. Não abra somente o `index.html` sem as pastas `css` e `img`.
-3. No **VS Code**, use **Arquivo → Abrir Pasta** e escolha o diretório completo.
-4. Instale a extensão **Live Server**, se ainda não estiver instalada.
-5. Abra `index.html` e clique com o botão direito em **Open with Live Server**.
-6. Deixe o navegador ao lado do VS Code. Preencha uma propriedade, aperte **Ctrl + S** e observe imediatamente a mudança. Use **Ctrl + F** para encontrar o seletor no CSS.
-7. Compare o navegador com a página correspondente do `modelo.pdf`, revise e só então avance.
+No laboratório o **PostgreSQL** e o **Beekeeper Studio** já estão instalados. O **PHP** você instala no passo 1.1.
 
-> **A página já aparece no início com um visual neutro**, graças ao arquivo `base.css`. Isso é proposital: o design final só surgirá à medida que o aluno preencher `style.css`.
+### 1.1 Instalar o PHP (Windows)
 
-## 🧩 Regras obrigatórias da atividade
+1. Baixe o PHP em **windows.php.net/download** → versão **VS17 x64 Non Thread Safe**, arquivo **Zip**.
+2. Extraia em uma pasta, por exemplo `C:\php` (ou `Downloads\php`, se não puder usar o `C:\`).
+3. Dentro dessa pasta, copie `php.ini-development` e renomeie a cópia para **`php.ini`**.
+4. Abra o `php.ini` no VS Code e, com **Ctrl + F**, deixe estas linhas assim (tire o `;` do começo):
+   ```ini
+   extension_dir = "ext"
+   extension=pdo_pgsql
+   extension=pgsql
+   extension=mbstring
+   ```
+   Se der erro de extensão não encontrada, troque `"ext"` pelo caminho completo, ex.: `"C:\php\ext"`.
+5. Teste no terminal do VS Code: `C:\php\php.exe -v` (use o caminho da sua pasta). Tem que aparecer `PHP 8...`.
 
-1. **Não edite o `css/base.css`**. Ele existe apenas para você enxergar a evolução do trabalho.
-2. **Preencha o `css/style.css` de cima para baixo**. Comece pelas variáveis em `:root` (cores e tamanhos), depois `body`, cabeçalho, logo, menu, botões, banner, serviços e demais seções.
-3. Em cada propriedade do CSS, **leia as opções A, B e C** e digite **o valor completo escolhido** depois dos `:`. Ex.: `display: flex;`. **Não escreva `display: A;`**.
-4. **Não remova o ponto e vírgula (`;`), as chaves `{ }`, os seletores, os comentários explicativos e os blocos `@media`.**
-5. **Não adicione regras no final do CSS para esconder erros** e não substitua `style.css` por um CSS pronto. A atividade exige experimentar, corrigir e compreender os comandos.
-6. No `index.html`, **substitua todos os `___` por textos coerentes com o PDF** (depois você pode adaptar os textos), preservando tags, classes, IDs e caminhos das imagens. Não mude o `href` dos links de navegação.
-7. Respeite a ordem de importação: no `<head>`, **`base.css` antes de `style.css`**. Não inverta e não apague as duas linhas.
-8. **Preserve a estrutura e o layout do PDF**: mesmas seções, na mesma ordem e com a mesma organização. Cores, imagens e textos podem ser personalizados (seção 🎨).
-9. **Teste a página no computador e no celular** (F12 → alternar dispositivo). Ajuste as opções dentro dos blocos `@media` para caber corretamente.
-10. Os depoimentos são **fictícios**; mantenha essa identificação. O formulário é **apenas demonstrativo**, sem PHP/banco de dados nesta etapa.
+> Se o comando `php` sozinho der **"não é reconhecido"**, é porque o PHP não está no PATH do Windows. Sem problema: use sempre o caminho completo, como `& "C:\php\php.exe" -S localhost:8000`.
 
-### Exemplo de preenchimento
+### 1.2 Criar o banco no Beekeeper (`banco/banco.sql`)
 
-```css
-/* display: controla como o elemento se organiza.
-   A) block
-   B) flex
-   C) grid
-*/
-display: ;          /* ANTES: ainda sem resposta */
+1. Complete os `___` do `banco/banco.sql`.
+2. No Beekeeper, conecte no PostgreSQL (`localhost`, porta `5432`, usuário `postgres` e a senha do laboratório).
+3. Rode **uma parte por vez**: selecione o trecho com o mouse e aperte **Ctrl + Enter**.
+   - **Parte 1** (conectado no banco `postgres`): cria o banco `educacao`.
+   - **Troque para o banco `educacao`** (seletor de banco no topo do Beekeeper) antes da Parte 2.
+   - **Parte 2**: cria a tabela `contatos`. **Parte 3**: grava uma linha de teste e mostra com `SELECT`.
+   - **Parte 4**: cria a tabela `agendamentos` (da agenda online). Pode deixar para fazer na Parte 3 deste README.
+
+### 1.3 Criar o `config.php` (a senha fica só nele)
+
+1. Copie o `config.exemplo.php` e renomeie a **cópia** para **`config.php`**.
+2. No `config.php`, troque `SUA_SENHA_AQUI` pela senha do PostgreSQL.
+3. O `.gitignore` já tem a linha `config.php`: **a senha nunca vai para o GitHub**. Não apague o `.gitignore`.
+
+### 1.4 Ligar o servidor do PHP
+
+O **Live Server não executa PHP** (e o `fetch` do JavaScript precisa do PHP). No VS Code abra **Terminal → New Terminal** (na pasta do projeto) e rode:
+
+```powershell
+& "C:\php\php.exe" -S localhost:8000
 ```
 
-Escolhendo `flex`, o aluno deverá deixar exatamente:
+Deixe esse terminal **aberto** o tempo todo e use sempre **`http://localhost:8000/...`** no navegador.
 
-```css
-display: flex;      /* DEPOIS: um valor CSS, não a letra B */
+---
+
+## 📨 Parte 2 · Formulário de Contato gravando no banco
+
+```text
+formulário (index.html) → salvar.php → conexao.php (usa o config.php) → PostgreSQL (tabela contatos)
 ```
 
-**Observação importante sobre as variáveis:** preencher `background: var(--green);` só mostrará a cor esperada depois que `--green` tiver um valor válido em `:root`. Por isso, comece pela paleta; não significa que a ligação do CSS esteja quebrada.
+1. Complete os `___` do `conexao.php` e do `salvar.php`. Quase tudo está no `index.html`: **Ctrl + F** em `name="` e `value="`.
+2. Abra `http://localhost:8000/testar_conexao.php` → tem que aparecer **Conexão OK!** e as tabelas encontradas.
+3. Abra `http://localhost:8000/index.html`, preencha o **Contato** e envie. Faça os testes:
 
-## 🎨 Personalização (depois de ficar igual ao modelo)
+| Teste | O endereço volta terminando em | Grava no banco? |
+| --- | --- | --- |
+| Tudo preenchido certo | `?enviado=1#contato` | sim |
+| Tudo vazio | `?erro=nome,email,servico,mensagem#contato` | não |
+| F12: mude o `value` de uma `<option>` para outro texto e envie | `?erro=servico#contato` | não |
+| Nome: `Robert'); DROP TABLE contatos;--` | `?enviado=1#contato` | grava como texto; a tabela continua lá |
+| Abrir `localhost:8000/salvar.php` direto | `index.html#contato` | não |
 
-Com a página **pronta e igual ao `modelo.pdf`**, você pode deixar com a sua cara:
+Confira no Beekeeper (banco `educacao`): `SELECT * FROM contatos ORDER BY id;`
+
+---
+
+## ⚡ Parte 3 · JavaScript
+
+No JavaScript cada `___` tem **3 alternativas** no comentário de cima. Leia, pense no que cada uma faz e **digite o valor** (não a letra):
+
+```js
+//    Qual evento acontece quando a pessoa clica?
+//    A) 'submit'    B) 'click'    C) 'change'
+document.addEventListener(___, function (evento) {        // ANTES
+document.addEventListener('click', function (evento) {    // DEPOIS (escolheu B)
+```
+
+> 🔍 **F12 → Console** mostra os erros do JavaScript em vermelho (com o arquivo e a linha). Enquanto ainda houver `___`, vai aparecer `___ is not defined`: é normal, é a lacuna que falta.
+
+### 3.1 Aquecimento: patinhas 🐾 (`js/patinhas.js`)
+
+Cada clique na página deixa uma pegada de cachorro que sobe e some. São **7 lacunas**: ouvir o clique, criar o elemento, posicionar no mouse, sortear o giro, colocar na página e apagar depois de 1 segundo.
+
+✅ **Pronto quando:** clicar em qualquer lugar da página faz aparecer uma 🐾 que some sozinha.
+
+### 3.2 Agenda online 📅 (horários vindos do banco)
+
+A seção **Agende uma visita** (já pronta no HTML e no CSS) funciona assim:
+
+```text
+1. escolhe o dia    →  agenda.js faz fetch('horarios.php?data=2026-12-01')
+                    →  horarios.php faz SELECT na tabela agendamentos
+                    →  responde JSON: {"ocupados": ["09:00", "14:00"]}
+                    →  agenda.js desenha os 8 botões e bloqueia os ocupados
+2. escolhe o horário e preenche nome e e-mail
+3. confirma         →  agenda.js faz fetch('agendar.php', POST com JSON)
+                    →  agendar.php confere e faz INSERT
+                    →  responde {"ok": true}  ou  {"ok": false, "erro": "ocupado"}
+                    →  agenda.js mostra a mensagem e atualiza os horários
+```
+
+Faça nesta ordem:
+
+1. **Banco:** complete e rode a **PARTE 4** do `banco/banco.sql` (tabela `agendamentos`, no banco `educacao`).
+2. **`horarios.php`** (5 lacunas, linhas **DICA**). Teste direto no navegador: `http://localhost:8000/horarios.php?data=2026-12-01` → tem que aparecer `{"ocupados":[]}`.
+3. **`agendar.php`** (12 lacunas, linhas **DICA**). Ele recebe JSON do JavaScript e responde JSON.
+4. **`js/agenda.js`** (14 lacunas, alternativas **A, B, C**), na ordem: ① elementos → ②③④ buscar no banco → ⑤–⑨ desenhar os botões → ⑩–⑭ enviar.
+
+Faça os testes:
+
+| Teste | O que tem que acontecer |
+| --- | --- |
+| Escolher um dia | Aparecem 8 botões de horário (08:00 a 17:00). |
+| Clicar num horário | O botão fica laranja, o **Confirmar agendamento** é liberado e aparece "Horário escolhido". |
+| Confirmar com nome e e-mail | Mensagem verde **Agendado!** e o horário fica **cinza e riscado**. |
+| Atualizar a página (F5) e escolher o mesmo dia | O horário agendado **continua** ocupado: veio do banco. |
+| Abra a página em **duas abas**, escolha o **mesmo** horário nas duas; confirme numa aba e depois na outra | O segundo recebe "Esse horário acabou de ser ocupado" (o `UNIQUE` do banco barrou). |
+| Confirmar com e-mail errado (ex.: `ana@`) | Mensagem vermelha "Confira: email". |
+| Dias que já passaram | O calendário não deixa escolher. |
+
+Confira no Beekeeper: `SELECT * FROM agendamentos ORDER BY data, horario;`
+
+> 🔍 **F12 → Network (Rede)** mostra cada pedido do `fetch`: clique em `horarios.php` ou `agendar.php` e veja a aba **Response** (a resposta em JSON que o PHP mandou).
+
+### 🔧 Se der erro no JavaScript
+
+| O que aparece | O que fazer |
+| --- | --- |
+| Console: `___ is not defined` | Ainda tem lacuna sem completar na linha indicada. |
+| Console: `Cannot read properties of null` | O `querySelector` não achou o elemento: confira o `#` e o id. |
+| "Não foi possível falar com o servidor" | Abra pelo `http://localhost:8000/index.html` (não pelo Live Server) e confira se o `php -S` está ligado. |
+| Console: `Unexpected token '<'` ou `... is not valid JSON` | O PHP mostrou um erro em vez de JSON: abra o `horarios.php?data=2026-12-01` direto no navegador e leia o erro. |
+| Os horários aparecem, mas nunca ficam ocupados | Confira a PARTE 4 do `banco.sql` e o `WHERE` do `horarios.php`. |
+| Clicar em Confirmar recarrega a página | Falta o `preventDefault()` (lacuna ⑪). |
+
+### 🔧 Se der erro no PHP ou no banco
+
+| O que aparece | O que fazer |
+| --- | --- |
+| `'php' não é reconhecido` | Use o caminho completo: `& "C:\php\php.exe" -S localhost:8000`. |
+| `could not find driver` | No `php.ini`, tire o `;` de `extension=pdo_pgsql` e `extension=pgsql` e reinicie o `php -S`. |
+| `Não foi possível conectar ao banco de dados.` | Confira senha, banco (`educacao`) e porta no `config.php`. O detalhe do erro aparece no terminal do `php -S`. |
+| `Failed opening required ... config.php` | Falta criar o `config.php` (copie o `config.exemplo.php`). |
+| A página baixa o arquivo `.php` ou mostra o código | Você abriu pelo Live Server. Use `http://localhost:8000/...`. |
+| `A tabela contatos não existe` | Rode a Parte 2 do `banco.sql` **no banco `educacao`**. |
+| Volta com `?erro=banco` | A tabela recusou os dados: confira se os nomes das colunas e os valores do `CHECK` estão iguais aos do formulário. |
+
+## 🎨 Personalização
+
+O HTML e o CSS já vêm prontos e iguais ao `modelo.pdf`. Depois que o PHP e o JavaScript funcionarem, você pode deixar com a sua cara:
 
 | Pode mudar ✅ | Não pode mudar ❌ |
 | --- | --- |
@@ -114,49 +224,23 @@ Com a página **pronta e igual ao `modelo.pdf`**, você pode deixar com a sua ca
 | As **imagens** da pasta `img/` (mesmo nome do arquivo, ou ajuste o `src`) | Os `display`, `grid`, `flex` e tamanhos que montam o layout |
 | Os **textos** (nome da empresa, serviços, depoimentos), mantendo o tema | Os blocos `@media` (a versão celular tem que continuar funcionando) |
 | O texto alternativo `alt` das imagens novas | Os arquivos `base.css` e a ordem dos `<link>` no `<head>` |
+| | Os `name` do formulário e os `value` do `<select>` (o PHP e o banco usam esses nomes) |
+| | Os `id` da agenda (`agenda-data`, `agenda-horarios`, `form-agenda`...): o JavaScript procura por eles |
 
-O resultado final tem que continuar **parecido com a landing page do modelo**: menu, banner, três serviços, Sobre, diferenciais, depoimentos, contato e rodapé, na mesma organização.
+O resultado final tem que continuar **parecido com a landing page do modelo**: menu, banner, três serviços, Sobre, diferenciais, depoimentos, agenda, contato e rodapé, na mesma organização.
 
-## 🗺️ Ordem de trabalho recomendada
-
-| Etapa | Seção no HTML / CSS | Observe no navegador |
-| --- | --- | --- |
-| 1 | `:root`, `body`, `img`, `a`, `ul` | Cores, fonte, margens e imagens |
-| 2 | `.site-header`, `.logo`, `.main-nav` | Cabeçalho e menu distribuídos |
-| 3 | `.button`, `.button-primary`, `.button-secondary` | Botões laranja e verde |
-| 4 | `.hero`, `.hero-content`, `.hero-image` | Banner com texto e foto lado a lado |
-| 5 | `.section`, `.services`, `.service-grid`, `.service-card` | Três cartões em linha em tela grande |
-| 6 | `.about`, `.benefits`, `.benefit-grid` | História e faixa verde-clara |
-| 7 | `.testimonial-grid`, `.contact`, `.contact-form` | Depoimentos e formulário |
-| 8 | `.site-footer`, `.social-links` | Rodapé verde-escuro |
-| 9 | `@media` de 980px e 700px | Versão responsiva |
-
-## 🔧 Se você preencher e não aparecer
-
-- Confira se **salvou com Ctrl+S** e se o Live Server está aberto.
-- Verifique o arquivo certo: edite **`css/style.css`**, não `css/base.css`.
-- Confirme se o HTML contém **duas** referências a CSS e se a ordem está correta.
-- Ao usar `var(--nome)`, confira se a variável do `:root` já foi preenchida corretamente.
-- Confira se a propriedade tem `:` e `;` e se as chaves `}` dos blocos estão equilibradas.
-- No navegador, use **F12 → Network** e verifique se CSS e imagens não apresentam erro **404**.
-- O comando correto pode produzir uma mudança pequena ou só ser visível ao passar o mouse (`:hover`) ou em tela pequena (`@media`).
-- Use **Ctrl + Shift + R** para atualizar sem cache, se necessário.
-
-## ✅ Entrega e critérios de avaliação
+## ✅ Entrega
 
 📅 **Entregar entre 30/11 e 04/12.**
 
-Entregue a pasta ou publique o trabalho no **seu repositório do GitHub** com:
+Publique o trabalho no **seu repositório do GitHub** com:
 
-- [ ] `index.html` com todos os textos e atributos `alt` preenchidos;
-- [ ] `css/style.css` com as alternativas resolvidas, sem `: ;` nas declarações;
-- [ ] `css/base.css` preservado, sem mudanças;
-- [ ] imagens da pasta `img/` carregando corretamente;
-- [ ] composição e organização parecidas com as duas páginas de `modelo.pdf` (cores e imagens podem ser personalizadas);
-- [ ] alinhamento correto de menu, três serviços, diferenciais, depoimentos, formulário e rodapé;
-- [ ] versão responsiva testada no celular;
-- [ ] imagem da página pronta (captura de tela) comparada ao PDF.
-
+- [ ] `banco/banco.sql`, `conexao.php`, `salvar.php`, `horarios.php`, `agendar.php`, `js/patinhas.js` e `js/agenda.js` **sem nenhum `___`**;
+- [ ] `testar_conexao.php` mostrando **Conexão OK!** e as duas tabelas;
+- [ ] os testes do **Contato** e da **Agenda** funcionando;
+- [ ] as **patinhas** aparecendo ao clicar;
+- [ ] capturas de tela: a agenda com um horário ocupado e o Beekeeper com `SELECT * FROM agendamentos`;
+- [ ] **sem** o `config.php` no GitHub (só o `config.exemplo.php`).
 
 ### 📤 Como postar no GitHub e me avisar
 
@@ -166,8 +250,9 @@ Entregue a pasta ou publique o trabalho no **seu repositório do GitHub** com:
 
 **2. Envie a pasta do projeto**
 1. No repositório novo, clique em **uploading an existing file** (ou **Add file → Upload files**).
-2. Abra a pasta do projeto no computador, selecione **tudo o que está dentro dela** (`index.html`, `css`, `img`, ...) e **arraste** para a página do GitHub.
-3. Confira se as pastas `css` e `img` apareceram na lista e clique em **Commit changes**.
+2. Abra a pasta do projeto no computador, selecione **tudo o que está dentro dela** (`index.html`, `css`, `js`, `banco`, `img`, ...) e **arraste** para a página do GitHub.
+3. Confira se as pastas `css`, `js`, `banco` e `img` apareceram na lista e clique em **Commit changes**.
+4. **Não envie o `config.php`** (ele tem a senha). O `config.exemplo.php` pode ir.
 
 **3. Me avise abrindo uma Issue (eu recebo notificação)**
 1. Abra: **https://github.com/eduardo97mendes/Atividade-03-3-ano/issues/new**
@@ -177,6 +262,4 @@ Entregue a pasta ou publique o trabalho no **seu repositório do GitHub** com:
 
 > Escrever `@eduardo97mendes` **dentro da Issue** faz chegar uma notificação para mim. Escrever o @ só no README do seu repositório **não** notifica. Se não conseguir abrir a Issue, mande o link do seu repositório pelo canal da turma.
 
----
 
-**Próximas etapas:** em aulas futuras poderão ser acrescentados JavaScript, PHP e PostgreSQL, mas **não fazem parte desta entrega de HTML/CSS**.
