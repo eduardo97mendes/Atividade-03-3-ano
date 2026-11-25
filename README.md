@@ -234,6 +234,25 @@ O HTML e o CSS já vêm prontos e iguais ao `modelo.pdf`. Depois que o PHP e o J
 
 O resultado final tem que continuar **parecido com a landing page do modelo**: menu, banner, três serviços, Sobre, diferenciais, depoimentos, agenda, contato e rodapé, na mesma organização.
 
+## 🏠 Faltou à aula ou é aluno do RAD (atividade em casa)?
+
+Se você **não compareceu à aula** (por qualquer motivo) ou é **aluno do RAD** e faz a atividade em casa:
+
+1. **Finalize a atividade em casa**, seguindo este README (e os PDFs da pasta `explicacao/`, se tiver dúvida).
+2. **Publique no seu repositório do GitHub** (veja "Como postar no GitHub e me avisar", logo abaixo).
+3. **Envie o link do seu repositório** para o professor: pela **Issue** neste repositório e/ou pelo **WhatsApp**.
+
+### 🎥 Não mostrou o projeto pronto no laboratório? Grave um vídeo
+
+Se o seu projeto **não foi apresentado funcionando no laboratório**, grave um **vídeo da tela** e envie junto com o link do repositório:
+
+- No começo do vídeo, **diga em voz alta: seu nome completo, a disciplina e a sua turma**.
+- Mostre **o que você fez**: abra os arquivos no VS Code e passe pelas partes que completou.
+- Mostre **o resultado final** funcionando no navegador, do topo ao rodapé da página.
+- Duração sugerida: de **2 a 5 minutos**.
+- Para gravar a tela no Windows: **Windows + Alt + R** (Xbox Game Bar) ou a **Ferramenta de Captura** (Windows + Shift + S → ícone de vídeo). No celular, o gravador de tela também serve.
+- Envie o vídeo pelo **WhatsApp** ou coloque o link do vídeo (Google Drive, YouTube não listado) na Issue.
+
 ## ✅ Entrega
 
 📅 **Entregar entre 30/11 e 04/12.**
