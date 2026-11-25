@@ -58,8 +58,10 @@ Atividade-03-3-ano/
 │   ├── patinhas.js         ← complete os ___ (alternativas A, B, C)
 │   └── agenda.js           ← complete os ___ (alternativas A, B, C)
 ├── .gitignore              ← impede o config.php de ir para o GitHub
-└── img/
+└── img/                    ← fotos do site (inclui sobre.jpg e os cães dos clientes)
 ```
+
+> 📷 **Fotos:** a foto da seção Sobre (`img/sobre.jpg`) e as fotos dos depoimentos (`img/cliente-luna.jpg`, `cliente-thor.jpg`, `cliente-max.jpg`, o cão de cada cliente fictício) são fotos de uso livre do **Pexels** (pexels.com). Os clientes e os depoimentos continuam **fictícios**.
 
 ---
 

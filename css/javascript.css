@@ -152,3 +152,21 @@
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }
+
+/* ============ FOTOS DO 3º ANO (Sobre e depoimentos) ============ */
+/* Foto da empresa: preenche o espaço sem deformar */
+.about-image img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center 78%;
+}
+
+/* Foto do cão de cada cliente no lugar das iniciais */
+img.testimonial-avatar {
+    flex: 0 0 58px;
+    width: 58px;
+    height: 58px;
+    object-fit: cover;
+    border: 3px solid var(--green-soft);
+    box-shadow: 0 0 0 2px var(--green);
+}
