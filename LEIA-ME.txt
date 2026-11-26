@@ -1,19 +1,16 @@
 ATIVIDADE 03 · 3º ANO — PHP + BANCO DE DADOS + JAVASCRIPT (EducaCão)
+Prazo de entrega: de 30/11 a 04/12.
 
-O HTML e o CSS já vêm PRONTOS. Seu trabalho é ligar o site ao banco.
-As instruções completas estão no README.md (Partes 1, 2 e 3).
+O HTML e o CSS já vêm PRONTOS. Seu trabalho é ligar o site ao banco (PHP) e
+criar as patinhas e a agenda online (JavaScript).
+
+TODO O PASSO A PASSO ESTÁ NOS PDFs da pasta explicacao/. Siga na ordem:
+  1_HTML_e_CSS_pronto_consulta.pdf      -> só consulta (já está pronto)
+  2_PHP_e_Banco_de_Dados.pdf            -> PHP, banco (PARTES 1 a 3), config.php, Contato
+  3_JavaScript_Patinhas_e_Agenda.pdf    -> patinhas, PARTE 4 do banco, agenda, testes
 
 PHP e SQL: complete cada ___ . A linha DICA logo acima diz onde achar a resposta.
 JavaScript: complete cada ___ escolhendo uma das opções A, B ou C do comentário
             (digite o VALOR, não a letra).
 
-Ordem:
-  1. banco/banco.sql (Partes 1 a 4, no Beekeeper)
-  2. config.php (copie o config.exemplo.php e coloque a senha; NÃO vai para o GitHub)
-  3. conexao.php -> testar_conexao.php -> salvar.php      (formulário de Contato)
-  4. js/patinhas.js                                       (aquecimento: só JavaScript)
-  5. horarios.php -> agendar.php -> js/agenda.js          (agenda online)
-
-Rode com o servidor do PHP (o Live Server não executa PHP):
-  & "C:\php\php.exe" -S localhost:8000
-e abra http://localhost:8000/index.html
+Entrega e como me avisar pelo GitHub: veja o README.md.
