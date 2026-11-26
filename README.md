@@ -23,14 +23,16 @@ O **HTML e o CSS já vêm prontos** (a landing page da EducaCão igual ao `model
 
 ---
 
-## 📘 Versão com explicação (para tirar dúvidas)
+## 📘 Explicações em PDF (na ordem do projeto)
 
-Na pasta **`explicacao/`** está a **versão com explicação** para você entender cada parte:
+Na pasta **`explicacao/`** estão as explicações com prints, **numeradas na ordem em que o projeto é feito**. Cada uma começa com o mapa **"Seu caminho"**, mostrando em que passo você está:
 
-- **`Explicacao_JavaScript.pdf`**: **guia passo a passo do JavaScript** (para acompanhar em casa ou se não houver apresentação): o que precisa instalar, como usar o F12 (Console e Network), e as duas funções separadas por parte: **🐾 Patinhas** e **📅 Agenda online**, com prints marcados de onde mexer, o código de cada passo e desenhos explicando como funciona na prática.
-- **`Explicacao_JavaScript.md`**: o mesmo conteúdo em texto, com as respostas de cada lacuna e o porquê.
-- **`Explicacao_PHP_Banco_de_Dados.pdf`**: passo a passo com prints, da instalação do PHP até o formulário gravando no banco.
-- **`Explicacao_HTML_CSS.pdf`**: como a página foi montada (o HTML e o CSS já vêm prontos para você).
+| PDF | O que tem | Para o 3º ano |
+| --- | --- | --- |
+| **`1_HTML_e_CSS_pronto_consulta.pdf`** | Cada regra do `style.css`, na ordem do código, e o que o 3º ano tem a mais (agenda, `javascript.css`, fotos) | **Só consulta**: o HTML e o CSS já vêm prontos |
+| **`2_PHP_e_Banco_de_Dados.pdf`** | Instalar PostgreSQL, Beekeeper e PHP; banco (**PARTES 1 a 3** do `banco.sql`); `config.php`; `conexao.php` e `salvar.php` | **Partes 1 e 2** deste README |
+| **`3_JavaScript_Patinhas_e_Agenda.pdf`** | F12 (Console e Network); 🐾 patinhas; **PARTE 4** do `banco.sql`; `horarios.php`, `agendar.php` e `js/agenda.js`; testes | **Parte 3** deste README |
+| `3_JavaScript_respostas.md` | O mesmo do PDF 3 em texto, com a resposta de cada lacuna e o porquê | Para conferir |
 
 Elas mostram as respostas, mas o objetivo é **entender**: tente primeiro, use quando travar e confira o porquê de cada valor. A pasta `explicacao/` não precisa ir para o seu repositório de entrega.
 
@@ -65,16 +67,29 @@ Atividade-03-3-ano/
 
 ---
 
-## 🐘 Parte 1 · Preparar o PHP e o banco
+## 🐘 Parte 1 · Preparar o banco e o PHP
 
-No laboratório o **PostgreSQL** e o **Beekeeper Studio** já estão instalados. O **PHP** você instala no passo 1.1.
+> 📘 Passo a passo com prints: **`explicacao/2_PHP_e_Banco_de_Dados.pdf`** (mesma ordem desta parte).
 
-### 1.1 Instalar o PHP (Windows)
+No laboratório o **PostgreSQL** e o **Beekeeper Studio** já estão instalados. Em casa, instale os dois antes (PDF 2, partes 1 e 2).
 
-1. Baixe o PHP em **windows.php.net/download** → versão **VS17 x64 Non Thread Safe**, arquivo **Zip**.
-2. Extraia em uma pasta, por exemplo `C:\php` (ou `Downloads\php`, se não puder usar o `C:\`).
-3. Dentro dessa pasta, copie `php.ini-development` e renomeie a cópia para **`php.ini`**.
-4. Abra o `php.ini` no VS Code e, com **Ctrl + F**, deixe estas linhas assim (tire o `;` do começo):
+### 1.1 Criar o banco no Beekeeper (`banco/banco.sql`)
+
+1. Complete os `___` do `banco/banco.sql`.
+2. No Beekeeper, conecte no PostgreSQL (`localhost`, porta `5432`, usuário `postgres` e a senha do laboratório).
+3. Rode **uma parte por vez**: selecione o trecho com o mouse e aperte **Ctrl + Enter**.
+   - **PARTE 1** (conectado no banco `postgres`): cria o banco `educacao`.
+   - **Troque para o banco `educacao`** (seletor de banco no topo do Beekeeper) antes da PARTE 2.
+   - **PARTE 2**: cria a tabela `contatos`. **PARTE 3**: grava uma linha de teste e mostra com `SELECT`.
+   - **PARTE 4** (tabela `agendamentos`, da agenda): fica para a **Parte 3** deste README (PDF 3).
+
+### 1.2 Instalar o PHP (Windows)
+
+1. Abra **php.net/downloads.php?os=windows**. **Antes**, instale o **Visual C++ Redistributable x64** (link **x64** na própria página): sem ele o PHP não abre (erro `VCRUNTIME140.dll`).
+2. No bloco **VS18 x64 Non Thread Safe** (PHP 8.6), clique em **Zip**.
+3. Extraia em uma pasta, por exemplo `C:\php` (ou `Downloads\php`, se não puder usar o `C:\`).
+4. Dentro dessa pasta, copie `php.ini-development` e renomeie a cópia para **`php.ini`**.
+5. Abra o `php.ini` no VS Code e, com **Ctrl + F**, deixe estas linhas assim (tire o `;` do começo):
    ```ini
    extension_dir = "ext"
    extension=pdo_pgsql
@@ -82,19 +97,9 @@ No laboratório o **PostgreSQL** e o **Beekeeper Studio** já estão instalados.
    extension=mbstring
    ```
    Se der erro de extensão não encontrada, troque `"ext"` pelo caminho completo, ex.: `"C:\php\ext"`.
-5. Teste no terminal do VS Code: `C:\php\php.exe -v` (use o caminho da sua pasta). Tem que aparecer `PHP 8...`.
+6. Teste no terminal do VS Code: `& "C:\php\php.exe" -v` (use o caminho da sua pasta). Tem que aparecer `PHP 8...`.
 
-> Se o comando `php` sozinho der **"não é reconhecido"**, é porque o PHP não está no PATH do Windows. Sem problema: use sempre o caminho completo, como `& "C:\php\php.exe" -S localhost:8000`.
-
-### 1.2 Criar o banco no Beekeeper (`banco/banco.sql`)
-
-1. Complete os `___` do `banco/banco.sql`.
-2. No Beekeeper, conecte no PostgreSQL (`localhost`, porta `5432`, usuário `postgres` e a senha do laboratório).
-3. Rode **uma parte por vez**: selecione o trecho com o mouse e aperte **Ctrl + Enter**.
-   - **Parte 1** (conectado no banco `postgres`): cria o banco `educacao`.
-   - **Troque para o banco `educacao`** (seletor de banco no topo do Beekeeper) antes da Parte 2.
-   - **Parte 2**: cria a tabela `contatos`. **Parte 3**: grava uma linha de teste e mostra com `SELECT`.
-   - **Parte 4**: cria a tabela `agendamentos` (da agenda online). Pode deixar para fazer na Parte 3 deste README.
+> Se o comando `php` sozinho der **"não é reconhecido"**, é porque o PHP não está no PATH do Windows. Em casa você pode colocar no PATH (PDF 2, parte 4). No laboratório, use sempre o caminho completo, como `& "C:\php\php.exe" -S localhost:8000`.
 
 ### 1.3 Criar o `config.php` (a senha fica só nele)
 
@@ -149,7 +154,7 @@ document.addEventListener('click', function (evento) {    // DEPOIS (escolheu B)
 
 > 🔍 **F12 → Console** mostra os erros do JavaScript em vermelho (com o arquivo e a linha). Enquanto ainda houver `___`, vai aparecer `___ is not defined`: é normal, é a lacuna que falta.
 
-> 📘 Travou? Abra o **`explicacao/Explicacao_JavaScript.pdf`**: cada passo tem print, código marcado e desenho explicando.
+> 📘 Travou? Abra o **`explicacao/3_JavaScript_Patinhas_e_Agenda.pdf`**: cada passo tem print, código marcado e desenho explicando.
 
 ### 3.1 Aquecimento: patinhas 🐾 (`js/patinhas.js`)
 
@@ -206,12 +211,15 @@ Confira no Beekeeper: `SELECT * FROM agendamentos ORDER BY data, horario;`
 | Console: `Unexpected token '<'` ou `... is not valid JSON` | O PHP mostrou um erro em vez de JSON: abra o `horarios.php?data=2026-12-01` direto no navegador e leia o erro. |
 | Os horários aparecem, mas nunca ficam ocupados | Confira a PARTE 4 do `banco.sql` e o `WHERE` do `horarios.php`. |
 | Clicar em Confirmar recarrega a página | Falta o `preventDefault()` (lacuna ⑪). |
+| Console: `Unexpected identifier 'fetch'` | Faltou o `await` antes do `fetch` (lacuna ③). |
+| Console: `409` ou `400` em vermelho ao agendar | **Normal**: é o PHP avisando "horário ocupado" ou "dados errados". A mensagem aparece na página. |
 
 ### 🔧 Se der erro no PHP ou no banco
 
 | O que aparece | O que fazer |
 | --- | --- |
 | `'php' não é reconhecido` | Use o caminho completo: `& "C:\php\php.exe" -S localhost:8000`. |
+| `VCRUNTIME140.dll` não encontrado | Instale o **Visual C++ Redistributable x64** (link na página de download do PHP). |
 | `could not find driver` | No `php.ini`, tire o `;` de `extension=pdo_pgsql` e `extension=pgsql` e reinicie o `php -S`. |
 | `Não foi possível conectar ao banco de dados.` | Confira senha, banco (`educacao`) e porta no `config.php`. O detalhe do erro aparece no terminal do `php -S`. |
 | `Failed opening required ... config.php` | Falta criar o `config.php` (copie o `config.exemplo.php`). |
